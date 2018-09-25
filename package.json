@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-react-views": "^0.10.5",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "sequelize": "^4.39.0",
+    "sequelize-cli": "^4.1.1"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint . --fix",
+    "db:init": "dropdb --if-exists hogwarts_dev && createdb hogwarts_dev",
+    "db:reset": "./scripts/resetDB",
+    "db:seed": "./scripts/seedDB"
+  },
+  "name": "Fooder_Project2",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "description": "Meal Planner crud app with sequelize",
+  "author": "Misha Holzman <mcholzman1@gmail.com>"
+}
