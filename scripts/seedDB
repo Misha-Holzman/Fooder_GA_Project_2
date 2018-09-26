@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+// grab everything from the models, including the DB connection
+const { Recipe, Category, Ingredient, RecipeIngredient, db } = require('../models');
+const { Recipe, Category, Ingredient, RecipeIngredient } = require('../data');
+
+
+(async () => {
+  // insert Recipe
+  /* await Recipe.bulkCreate() */
+
+  // first insert the houses
+  // bulkcreate is expecting an array of objects that have the keys that match the database columns. 
+  // Then we are deconstructing houses by mapping over it (this is a for loop) with name and img_url
+  // It then spits out and reconstructs an object that has two keys called name and img_url
+  await Recipe.bulkCreate(recipes.map(([name, img_url, yeild, total_cook_time, calories_per_serving, description, directions]) => ({ name, img_url, yeild, total_cook_time, calories_per_serving, description, directions })));
+
+  await Category.bulkCreate(categories.map(([cuisine_type, cook_time, max_calories, vegitarian, meat]) => ({ cuisine_type, cook_time, max_calories, vegitarian, meat })));
+
+  await Ingredient.bulkCreate(ingredients.map(([name]) => ({ name })));
+
+  await RecipeIngredient.bulkCreate(recipeIngredients.map(([quantity]) => ({ quantity })));
+
+
+  db.close();
+})();

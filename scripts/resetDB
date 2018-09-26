@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+
+
+// const db = new Sequelize({
+//   database: 'hogwarts_dev',
+//   dialect:  'postgres',
+//   define:   {
+//     underscored: true,
+//     returning:   true,
+//   },
+// });
+
+
+ // This is getting the db connection from sequalize
+const { db } = require('../models');
+
+
+
+// async call (since were awaiting ap promise)
+(async () => {
+  await db.sync({ force: true });
+  // IMPORTANT –> close the connection
+  db.close();
+})();
