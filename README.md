@@ -10,8 +10,7 @@ Created by: Misha Holzman
 
 ### Who is the user?
 
-– You are a young professional that benefits from planing meals ahead of time. 
-– You are an individual who wants to eat healthy, not eat out all the time to save money, and is concious about how long it takes to make a meal every night.
+The Fooder app's target market is young professionals that benefit from planing meals ahead of time in an easy and visually appealing manner. Individuals using the app want to eat healthy meals, avoid eating out all the time to budget their money, and are conscious about how long it takes to make a meal every night.
 
 ### What features does Fooder offer?
 
