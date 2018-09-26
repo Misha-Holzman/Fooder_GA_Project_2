@@ -4,7 +4,6 @@
     "express": "^4.16.3",
     "express-react-views": "^0.10.5",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.4",
     "pg": "^7.4.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -14,7 +13,7 @@
   "scripts": {
     "dev": "nodemon",
     "lint": "eslint . --fix",
-    "db:init": "dropdb --if-exists hogwarts_dev && createdb hogwarts_dev",
+    "db:init": "dropdb --if-exists fooder_dev && createdb fooder_dev",
     "db:reset": "./scripts/resetDB",
     "db:seed": "./scripts/seedDB"
   },
@@ -23,5 +22,11 @@
   "main": "server.js",
   "license": "MIT",
   "description": "Meal Planner crud app with sequelize",
-  "author": "Misha Holzman <mcholzman1@gmail.com>"
+  "author": "Misha Holzman <mcholzman1@gmail.com>",
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.4"
+  }
 }
