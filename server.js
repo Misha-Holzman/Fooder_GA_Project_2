@@ -9,19 +9,21 @@ const recipeController = require('./routes/houseController');
 const categoryController = require('./routes/studentController');
 const ingredientsController = require('./routes/studentController');
 
-// also require controllers
 
 const PORT = process.env.PORT || 3000;
 
-
 const app = express();
+
+
 
 app.set('view engine', 'jsx')
 app.engine('jsx', reactViews.createEngine())
 
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))   
+
 
 app.use('/recipes', recipesRouter);
 app.use('/ingredients', ingredientsRouter);
@@ -31,6 +33,10 @@ app.use('/categories', categoryRouter);
 app.get('/', (req, res) => {
   res.send('hello world');
 });
+
+
+
+
 
 
 app.listen(PORT, () => console.log(`Server up and Foooooooder listening on port ${PORT} in ${app.get('env')} mode`));

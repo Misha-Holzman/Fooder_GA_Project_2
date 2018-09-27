@@ -13,9 +13,9 @@ const { recipes, categories, ingredients } = require('../data');
   // bulkcreate is expecting an array of objects that have the keys that match the database columns. 
   // Then we are deconstructing houses by mapping over it (this is a for loop) with name and img_url
   // It then spits out and reconstructs an object that has two keys called name and img_url
-  await Recipe.bulkCreate(recipes.map(([name, img_url, yeild, total_cook_time, calories_per_serving, description, directions]) => ({ name, img_url, yeild, total_cook_time, calories_per_serving, description, directions })));
+  await Recipe.bulkCreate(recipes.map(([name, img_url, yeild, total_cook_time, calories_per_serving, description, directions, vegitarian, meat]) => ({ name, img_url, yeild, total_cook_time, calories_per_serving, description, directions, vegitarian, meat })));
 
-  await Category.bulkCreate(categories.map(([cuisine_type, cook_time, max_calories, vegitarian, meat]) => ({ cuisine_type, cook_time, max_calories, vegitarian, meat })));
+  await Category.bulkCreate(categories.map(([cuisine_type]) => ({ cuisine_type })));
 
   await Ingredient.bulkCreate(ingredients.map(([name]) => ({ name })));
 
