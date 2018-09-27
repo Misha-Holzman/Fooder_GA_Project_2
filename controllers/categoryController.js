@@ -23,7 +23,7 @@ module.exports = {
 
 
   // So here I am either going to have data or im not. It will throw an error if data is not found.
-  // its calling the categories we put in res.locals and is using a promise (await) to call house.findAll
+  // its calling the categories we put in res.locals and is using a promise (await) to call category.findAll
 
 
 
@@ -46,13 +46,10 @@ module.exports = {
 
   async create(req, res, next) {
     try {
-      const {
-        fname, lname, image,
-      } = req.body;
+      const { cuisine_type } = req.body;
 
       res.locals.categories = await Category.create({
-        name,
-        img_url,
+        cuisine_type
       });
 
       next();
@@ -67,9 +64,7 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
       res.locals.categories = await Category.update({
-        fname,
-        lname,
-        image,
+        cuisine_type
       }, {
         where: {
           	id,
@@ -87,24 +82,10 @@ module.exports = {
   async destroy(req, res) {
     res.locals.categories = await Category.destroy({
       where: {
-        fname,
-        lname,
-        image,
-        recipe_id,
+        cuisine_type
       },
     });
   },
-
-
-
-
-
-
-
-
-
-
-
 
 
 

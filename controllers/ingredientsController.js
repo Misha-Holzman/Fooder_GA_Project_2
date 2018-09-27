@@ -1,5 +1,5 @@
 
-const { Student, House } = require('../models');
+const { Ingredient, Category, Recipe } = require('../models');
 
 
 module.exports = {
@@ -8,11 +8,11 @@ module.exports = {
   async index(req, res, next) {
   	let filter = {};
     try {
-      if ('house_id' in req.params) {
-      	const {house_id} = req.params
-      	filter = { where: { house_id }}
+      if ('ingredient_id' in req.params) {
+      	const {ingredient_id} = req.params
+      	filter = { where: { ingredient_id }}
       }
-      res.locals.students = await Student.findAll({
+      res.locals.ingredients = await Ingredient.findAll({
         rejectOnEmpty: true,
       });
       next();
@@ -23,7 +23,7 @@ module.exports = {
 
 
   // So here I am either going to have data or im not. It will throw an error if data is not found.
-  // its calling the students we put in res.locals and is using a promise (await) to call house.findAll
+  // its calling the ingredients we put in res.locals and is using a promise (await) to call ingredient.findAll
 
 
 
@@ -32,7 +32,7 @@ module.exports = {
     try {
       // next line is gaurding against getting a bad id
       const id = Number.parseInt(req.params.id, 10);
-      res.locals.students = await Student.findOne({
+      res.locals.ingredients = await Ingredient.findOne({
         where:         { id },
         rejectOnEmpty: true,
       });
@@ -45,13 +45,10 @@ module.exports = {
 
   async create(req, res, next) {
     try {
-      const {
-        fname, lname, image,
-      } = req.body;
+      const { name } = req.body;
 
-      res.locals.students = await Student.create({
-        name,
-        img_url,
+      res.locals.ingredients = await Ingredient.create({
+        name
       });
 
       next();
@@ -65,10 +62,8 @@ module.exports = {
   async update(req, res, next) {
     try {
       const id = Number.parseInt(req.params.id, 10);
-      res.locals.students = await Student.update({
-        fname,
-        lname,
-        image,
+      res.locals.ingredients = await Ingredient.update({
+        name
       }, {
         where: {
           	id,
@@ -84,24 +79,12 @@ module.exports = {
 
 
   async destroy(req, res) {
-    res.locals.students = await Student.destroy({
+    res.locals.ingredients = await Ingredient.destroy({
       where: {
-        fname,
-        lname,
-        image,
-        house_id,
+        name
       },
     });
   },
-
-
-
-
-
-
-
-
-
 
 
 
