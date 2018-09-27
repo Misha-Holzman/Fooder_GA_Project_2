@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 // grab everything from the models, including the DB connection
-const { Recipe, Category, Ingredient, RecipeIngredient, db } = require('../models');
-const { Recipe, Category, Ingredient, RecipeIngredient } = require('../data');
+const { Recipe, Category, Ingredient, db } = require('../models');
+const { recipes, categories, ingredients } = require('../data');
 
-
+ 
 (async () => {
   // insert Recipe
   /* await Recipe.bulkCreate() */
@@ -18,9 +18,6 @@ const { Recipe, Category, Ingredient, RecipeIngredient } = require('../data');
   await Category.bulkCreate(categories.map(([cuisine_type, cook_time, max_calories, vegitarian, meat]) => ({ cuisine_type, cook_time, max_calories, vegitarian, meat })));
 
   await Ingredient.bulkCreate(ingredients.map(([name]) => ({ name })));
-
-  await RecipeIngredient.bulkCreate(recipeIngredients.map(([quantity]) => ({ quantity })));
-
 
   db.close();
 })();
