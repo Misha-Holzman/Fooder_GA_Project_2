@@ -1,5 +1,5 @@
 // TODO: [1] import the your model
-const { Recipe, Category, Ingredient } = require('../models');
+const { Recipe } = require('../models');
 
 
 module.exports = {
@@ -28,14 +28,12 @@ module.exports = {
   // its calling the recipes we put in res.locals and is using a promise (await) to call recipe.findAll
 
 
-
-
   async getOne(req, res, next) {
     try {
       // next line is gaurding against getting a bad id
       const id = Number.parseInt(req.params.recipe_id, 10);
       res.locals.recipes = await Recipe.findOne({
-        where:         { id },
+        where: { id },
         rejectOnEmpty: true,
       });
       next();
@@ -48,28 +46,28 @@ module.exports = {
   async create(req, res, next) {
     try {
       // receiving from the body
-      const { 
-        name, 
-        img_url, 
-        yeild, 
-        total_cook_time, 
-        calories_per_serving, 
-        description, 
-        directions, 
-        vegitarian, 
-        meat 
+      const {
+        name,
+        img_url,
+        yeild,
+        total_cook_time,
+        calories_per_serving,
+        description,
+        directions,
+        vegitarian,
+        meat,
       } = req.body;
 
-      res.locals.recipe = await Recipe.create({
-        name, 
-        img_url, 
-        yeild, 
-        total_cook_time, 
-        calories_per_serving, 
-        description, 
+      res.locals.recipes = await Recipe.create({
+        name,
+        img_url,
+        yeild,
+        total_cook_time,
+        calories_per_serving,
+        description,
         directions,
-        vegitarian, 
-        meat
+        vegitarian,
+        meat,
       });
 
       next();
@@ -79,20 +77,37 @@ module.exports = {
   },
 
 
-
   async update(req, res, next) {
     try {
       const id = Number.parseInt(req.params.recipe_id, 10);
-      res.locals.recipes = await Recipe.update({
-        name, 
-        img_url, 
-        yeild, 
-        total_cook_time, 
-        calories_per_serving, 
-        description, 
-        directions, 
-        vegitarian, 
-        meat
+
+      const { 
+        name,
+        img_url,
+        yeild,
+        total_cook_time,
+        calories_per_serving,
+        description,
+        directions,
+        vegitarian,
+        meat,
+      } = req.body;
+
+      res.locals.recipes = await Recipe.findOne({
+        where: { id },
+        rejectOnEmpty: true,
+      });
+
+      const newRecipe = await Recipe.update({
+        name,
+        img_url,
+        yeild,
+        total_cook_time,
+        calories_per_serving,
+        description,
+        directions,
+        vegitarian,
+        meat,
       }, {
         where: {
           id,
@@ -101,6 +116,8 @@ module.exports = {
         return: true,
       });
 
+      res.locals.recipes = newRecipe
+
       next();
     } catch (e) {
       next(e);
@@ -108,29 +125,21 @@ module.exports = {
   },
 
 
-
   async destroy(req, res) {
     res.locals.recipes = await Recipe.destroy({
       where: {
-        name, 
-        img_url, 
-        yeild, 
-        total_cook_time, 
-        calories_per_serving, 
-        description, 
-        directions, 
-        vegitarian, 
-        meat
+        name,
+        img_url,
+        yeild,
+        total_cook_time,
+        calories_per_serving,
+        description,
+        directions,
+        vegitarian,
+        meat,
       },
     });
   },
 
 
-
-
-
-
 };
-
-
-

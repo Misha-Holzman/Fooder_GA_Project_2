@@ -9,8 +9,8 @@ module.exports = {
   	let filter = {};
     try {
       if ('recipe_id' in req.params) {
-      	const { recipe_id } = req.params
-      	filter = { where: { recipe_id }}
+      	const { recipe_id } = req.params;
+      	filter = { where: { recipe_id } };
       }
       res.locals.categories = await Category.findAll({
         rejectOnEmpty: true,
@@ -26,14 +26,12 @@ module.exports = {
   // its calling the categories we put in res.locals and is using a promise (await) to call category.findAll
 
 
-
-
   async getOne(req, res, next) {
     try {
       // next line is gaurding against getting a bad id
       const id = Number.parseInt(req.params.id, 10);
       res.locals.categories = await Category.findOne({
-        where:         { id },
+        where: { id },
         rejectOnEmpty: true,
       });
       next();
@@ -43,13 +41,12 @@ module.exports = {
   },
 
 
-
   async create(req, res, next) {
     try {
       const { cuisine_type } = req.body;
 
       res.locals.categories = await Category.create({
-        cuisine_type
+        cuisine_type,
       });
 
       next();
@@ -59,36 +56,30 @@ module.exports = {
   },
 
 
-
-  async update(req, res, next) {
-    try {
-      const id = Number.parseInt(req.params.id, 10);
-      res.locals.categories = await Category.update({
-        cuisine_type
-      }, {
-        where: {
-          	id,
-        },
-      });
-      next();
-    } catch (e) {
-      next(e);
-    }
-  },
-
-
+  // async update(req, res, next) {
+  //   try {
+  //     const id = Number.parseInt(req.params.id, 10);
+  //     res.locals.categories = await Category.update({
+  //       cuisine_type,
+  //     }, {
+  //       where: {
+  //         	id,
+  //       },
+  //     });
+  //     next();
+  //   } catch (e) {
+  //     next(e);
+  //   }
+  // },
 
 
   async destroy(req, res) {
     res.locals.categories = await Category.destroy({
       where: {
-        cuisine_type
+        cuisine_type,
       },
     });
   },
-
-
-
 
 
 };

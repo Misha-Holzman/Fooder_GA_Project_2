@@ -9,8 +9,8 @@ module.exports = {
   	let filter = {};
     try {
       if ('ingredient_id' in req.params) {
-      	const {ingredient_id} = req.params
-      	filter = { where: { ingredient_id }}
+      	const { ingredient_id } = req.params;
+      	filter = { where: { ingredient_id } };
       }
       res.locals.ingredients = await Ingredient.findAll({
         rejectOnEmpty: true,
@@ -26,14 +26,12 @@ module.exports = {
   // its calling the ingredients we put in res.locals and is using a promise (await) to call ingredient.findAll
 
 
-
-
   async getOne(req, res, next) {
     try {
       // next line is gaurding against getting a bad id
       const id = Number.parseInt(req.params.id, 10);
       res.locals.ingredients = await Ingredient.findOne({
-        where:         { id },
+        where: { id },
         rejectOnEmpty: true,
       });
       next();
@@ -48,7 +46,7 @@ module.exports = {
       const { name } = req.body;
 
       res.locals.ingredients = await Ingredient.create({
-        name
+        name,
       });
 
       next();
@@ -58,38 +56,30 @@ module.exports = {
   },
 
 
-
-  async update(req, res, next) {
-    try {
-      const id = Number.parseInt(req.params.id, 10);
-      res.locals.ingredients = await Ingredient.update({
-        name
-      }, {
-        where: {
-          	id,
-        },
-      });
-      next();
-    } catch (e) {
-      next(e);
-    }
-  },
-
-
+  // async update(req, res, next) {
+  //   try {
+  //     const id = Number.parseInt(req.params.id, 10);
+  //     res.locals.ingredients = await Ingredient.update({
+  //       name,
+  //     }, {
+  //       where: {
+  //         	id,
+  //       },
+  //     });
+  //     next();
+  //   } catch (e) {
+  //     next(e);
+  //   }
+  // },
 
 
   async destroy(req, res) {
     res.locals.ingredients = await Ingredient.destroy({
       where: {
-        name
+        name,
       },
     });
   },
-
-
-
-
-
 
 
 };

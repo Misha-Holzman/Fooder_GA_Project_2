@@ -13,60 +13,56 @@ const db = new Sequelize({
 });
 
 
-
-
 const Recipe = db.define('recipe', {
   name: {
-    type:      Sequelize.STRING(64),
-    unique:    true,
+    type: Sequelize.STRING(64),
+    unique: true,
     allowNull: false,
   },
   img_url: {
-    type:      Sequelize.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   yeild: {
-    type:      Sequelize.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   total_cook_time: {
-    type:      Sequelize.STRING(64),
+    type: Sequelize.STRING(64),
     allowNull: false,
   },
   calories_per_serving: {
-    type:      Sequelize.INTEGER,
+    type: Sequelize.INTEGER,
   },
   description: {
-    type:      Sequelize.TEXT,
+    type: Sequelize.TEXT,
   },
   directions: {
-    type:      Sequelize.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   vegitarian: {
-    type:      Sequelize.BOOLEAN,
+    type: Sequelize.BOOLEAN,
   },
   meat: {
-    type:      Sequelize.BOOLEAN,
-  }
+    type: Sequelize.BOOLEAN,
+  },
 });
 
 
 const Ingredient = db.define('ingredient', {
   name: {
-    type:      Sequelize.STRING(64),
+    type: Sequelize.STRING(64),
     allowNull: false,
-  }
+  },
 });
-
 
 
 const Category = db.define('category', {
   cuisine_type: {
-    type:      Sequelize.STRING(64),
+    type: Sequelize.STRING(64),
   },
 });
-
 
 
 // ASSOCIATIONS
@@ -76,6 +72,7 @@ Ingredient.belongsToMany(Recipe, { through: 'recipe_ingredients' });
 
 Recipe.belongsToMany(Category, { through: 'recipe_category' });
 Category.belongsToMany(Recipe, { through: 'recipe_category' });
+
 
 
 module.exports = {

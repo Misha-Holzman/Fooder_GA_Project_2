@@ -4,20 +4,101 @@
 const { Recipe, Category, Ingredient, db } = require('../models');
 const { recipes, categories, ingredients } = require('../data');
 
- 
+
+
 (async () => {
-  // insert Recipe
+
+
+await Promise.all(recipes.map([
+  name,
+  img_url,
+  yeild,
+  total_cook_time,
+  calories_per_serving,
+  categories,
+  ingredients,
+  description, 
+  directions,
+  vegitarian,
+  meat
+])) => {
+  const [[categories], [ingredients]] = await Promise.all([
+    categories.map(cat => Category.createOrUpdate(cat, {
+      where: {
+        cuisine_type: cat
+      }
+    }
+      )),
+    ingredients.map(ing => Ingredient.createOrUpdate(ing, {
+      where: {
+        name: ing
+      }
+    }
+      )),
+    ]);
+  const newRecipe = await Recipe.create({
+    name, 
+    img_url, 
+    yeild, 
+    total_cook_time, 
+    calories_per_serving, 
+    description, 
+    directions, 
+    vegitarian, 
+    meat
+  })
+  
+  await newRecipe.setCategories(categories);
+  await newRecipe.setIngredients(ingredients);
+
+  return newRecipe.save();
+};
+  // await Promise.all()
+  db.close();
+
+
+
+
+})();
+
+// insert Recipe
   /* await Recipe.bulkCreate() */
 
-  // first insert the houses
+  // first insert the **
   // bulkcreate is expecting an array of objects that have the keys that match the database columns. 
-  // Then we are deconstructing houses by mapping over it (this is a for loop) with name and img_url
+  // Then we are deconstructing ** by mapping over it (this is a for loop) with name and img_url
   // It then spits out and reconstructs an object that has two keys called name and img_url
-  await Recipe.bulkCreate(recipes.map(([name, img_url, yeild, total_cook_time, calories_per_serving, description, directions, vegitarian, meat]) => ({ name, img_url, yeild, total_cook_time, calories_per_serving, description, directions, vegitarian, meat })));
 
-  await Category.bulkCreate(categories.map(([cuisine_type]) => ({ cuisine_type })));
 
-  await Ingredient.bulkCreate(ingredients.map(([name]) => ({ name })));
+// await Recipe.bulkCreate(recipes.map(([name, img_url, yeild, total_cook_time, calories_per_serving, categories, ingredients, description, directions, vegitarian, meat]) => ({ name, img_url, yeild, total_cook_time, calories_per_serving, categories, ingredients, description, directions, vegitarian, meat })));
 
-  db.close();
-})();
+
+
+
+
+// loops over the data, deconstructs the data, takes the categories and insertds them one by one, 
+// findOrCreate ––> they get set at categories 
+
+
+// 1. loop over all the recipes –> .map 
+// 2. in the map, destructure the feilds. two of the position are cat and ing
+// 3. (arrray) of categories, still inside the loop, do categories 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

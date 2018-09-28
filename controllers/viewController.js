@@ -1,5 +1,5 @@
 module.exports = {
-  showingredients(req, res) {
+  showIngredients(req, res) {
     res.json(res.locals);
   },
   showRecipes(req, res) {
@@ -10,15 +10,15 @@ module.exports = {
   },
   handleRecipeCreate(req, res) {
   	res.json(res.locals);
-    res.redirect(`/recipes/${res.locals.recipe.id}`);
+    // res.redirect(`/recipes/${res.locals.recipe.id}`);
   },
   handleCategoryCreate(req, res) {
     res.json(res.locals);
-    res.redirect(`/categories/${res.locals.category.id}`);
+    // res.redirect(`/categories/${res.locals.category.id}`);
   },
   handleIngredientsCreate(req, res) {
     res.json(res.locals);
-    res.redirect(`/ingredients/${res.locals.ingredient.id}`);
+    // res.redirect(`/ingredients/${res.locals.ingredient.id}`);
   },
   notFound(err, req, res, next) {
   	res.sendStatus(404);
@@ -34,15 +34,15 @@ module.exports = {
   },
   handleRecipeUpdate(req, res) {
   	res.json(res.locals);
-  	res.redirect(`/recipes/${res.locals.recipe.id}`);
+  	// res.redirect(`/recipes/${res.locals.recipe.id}`);
   },
   handleIngredientsUpdate(req, res) {
     res.json(res.locals);
-    res.redirect(`/ingredients/${res.locals.ingredient.id}`);
+    // res.redirect(`/ingredients/${res.locals.ingredient.id}`);
   },
   handleCategoryUpdate(req, res) {
     res.json(res.locals);
-    res.redirect(`/categories/${res.locals.category.id}`);
+    // res.redirect(`/categories/${res.locals.category.id}`);
   },
   badUpdate(err, req, res, next) {
     res.sendStatus(400);
@@ -50,7 +50,9 @@ module.exports = {
   handleDestroy(req, res) {
   	res.json(res.locals);
   },
+  
 };
+
 
 // locals is a container that you throw stuff into
 

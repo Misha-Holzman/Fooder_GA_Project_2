@@ -1,25 +1,21 @@
 const express = require('express');
-const recipes  = require('../controllers/recipeController');
-const views   = require('../controllers/viewController');
+const recipes = require('../controllers/recipeController');
+const views = require('../controllers/viewController');
 
 
 const recipeRouter = express.Router();
 
 
-recipeRouter.route('/:recipe_id')
+recipeRouter.route('/:id')
   .get(recipes.getOne, views.showOne)
-  .put(recipes.update, views.handleUpdate, views.badUpdate)
+  .put(recipes.update)
   .delete(recipes.destroy, views.handleDestroy);
 
 
-
-
 // everything in this file will be mounted at /recipes
-recipeRouter.route('/')
+recipeRouter.route('/recipes')
   .get(recipes.index, views.showRecipes)
-  .post(recipes.create, views.handleCreate, views.badCreate);
-
-
+  .post(recipes.create);
 
 
 recipeRouter.use(views.showJSON, views.notFound);
@@ -27,4 +23,3 @@ recipeRouter.use(views.showJSON, views.notFound);
 
 
 module.exports = recipeRouter;
-
