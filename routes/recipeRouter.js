@@ -8,14 +8,14 @@ const recipeRouter = express.Router();
 
 recipeRouter.route('/:id')
   .get(recipes.getOne, views.showOne)
-  .put(recipes.update)
+  .put(recipes.update, views.handleUpdate, views.badUpdate)
   .delete(recipes.destroy, views.handleDestroy);
 
 
 // everything in this file will be mounted at /recipes
-recipeRouter.route('/recipes')
+recipeRouter.route('/')
   .get(recipes.index, views.showRecipes)
-  .post(recipes.create);
+  .post(recipes.create, views.showJSON, views.badCreate);
 
 
 recipeRouter.use(views.showJSON, views.notFound);

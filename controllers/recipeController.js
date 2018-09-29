@@ -1,5 +1,5 @@
 // TODO: [1] import the your model
-const { Recipe } = require('../models');
+const { Category, Recipe, Ingredient } = require('../models');
 
 
 module.exports = {
@@ -12,8 +12,14 @@ module.exports = {
    * @param {next} next - The next middleware function in our route
    * @return {undefined}
    */
+   
   async index(req, res, next) {
+    let filter = {};
     try {
+      if ('id' in req.params) {
+        const { id } = req.params;
+        filter = { where: { id } };
+      }
       res.locals.recipes = await Recipe.findAll({
         rejectOnEmpty: true,
       });
@@ -31,7 +37,7 @@ module.exports = {
   async getOne(req, res, next) {
     try {
       // next line is gaurding against getting a bad id
-      const id = Number.parseInt(req.params.recipe_id, 10);
+      const id = Number.parseInt(req.params.id, 10);
       res.locals.recipes = await Recipe.findOne({
         where: { id },
         rejectOnEmpty: true,
@@ -79,7 +85,7 @@ module.exports = {
 
   async update(req, res, next) {
     try {
-      const id = Number.parseInt(req.params.recipe_id, 10);
+      const id = Number.parseInt(req.params.id, 10);
 
       const { 
         name,

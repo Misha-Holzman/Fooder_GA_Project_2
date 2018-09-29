@@ -32,17 +32,9 @@ module.exports = {
   showOne(req, res) {
   	res.json(res.locals);
   },
-  handleRecipeUpdate(req, res) {
+  handleUpdate(req, res) {
   	res.json(res.locals);
   	// res.redirect(`/recipes/${res.locals.recipe.id}`);
-  },
-  handleIngredientsUpdate(req, res) {
-    res.json(res.locals);
-    // res.redirect(`/ingredients/${res.locals.ingredient.id}`);
-  },
-  handleCategoryUpdate(req, res) {
-    res.json(res.locals);
-    // res.redirect(`/categories/${res.locals.category.id}`);
   },
   badUpdate(err, req, res, next) {
     res.sendStatus(400);

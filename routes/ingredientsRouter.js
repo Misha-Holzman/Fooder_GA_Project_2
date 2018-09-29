@@ -6,9 +6,9 @@ const views = require('../controllers/viewController');
 const ingredientsRouter = express.Router();
 
 
-ingredientsRouter.route('/:ingredients_id')
+ingredientsRouter.route('/:id')
   .get(ingredients.getOne, views.showOne)
-  // .put(ingredients.update, views.handleUpdate, views.badUpdate)
+  .put(ingredients.update, views.handleUpdate, views.badUpdate)
   .delete(ingredients.destroy, views.handleDestroy);
 
 

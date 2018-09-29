@@ -8,9 +8,9 @@ module.exports = {
   async index(req, res, next) {
   	let filter = {};
     try {
-      if ('recipe_id' in req.params) {
-      	const { recipe_id } = req.params;
-      	filter = { where: { recipe_id } };
+      if ('id' in req.params) {
+      	const { id } = req.params;
+      	filter = { where: { id } };
       }
       res.locals.categories = await Category.findAll({
         rejectOnEmpty: true,
@@ -55,22 +55,36 @@ module.exports = {
     }
   },
 
+  async update(req, res, next) {
+    try {
+      const id = Number.parseInt(req.params.id, 10);
 
-  // async update(req, res, next) {
-  //   try {
-  //     const id = Number.parseInt(req.params.id, 10);
-  //     res.locals.categories = await Category.update({
-  //       cuisine_type,
-  //     }, {
-  //       where: {
-  //         	id,
-  //       },
-  //     });
-  //     next();
-  //   } catch (e) {
-  //     next(e);
-  //   }
-  // },
+      const { 
+        cuisine_type,
+      } = req.body;
+
+      res.locals.categories = await Category.findOne({
+        where: { id },
+        rejectOnEmpty: true,
+      });
+
+      const newCat = await Category.update({
+        cuisine_type,
+      }, {
+        where: {
+          id,
+        },
+        limit: 1,
+        return: true,
+      });
+
+      res.locals.categories = newCat
+
+      next();
+    } catch (e) {
+      next(e);
+    }
+  },
 
 
   async destroy(req, res) {

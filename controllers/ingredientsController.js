@@ -8,9 +8,9 @@ module.exports = {
   async index(req, res, next) {
   	let filter = {};
     try {
-      if ('ingredient_id' in req.params) {
-      	const { ingredient_id } = req.params;
-      	filter = { where: { ingredient_id } };
+      if ('id' in req.params) {
+      	const { id } = req.params;
+      	filter = { where: { id } };
       }
       res.locals.ingredients = await Ingredient.findAll({
         rejectOnEmpty: true,
@@ -56,21 +56,36 @@ module.exports = {
   },
 
 
-  // async update(req, res, next) {
-  //   try {
-  //     const id = Number.parseInt(req.params.id, 10);
-  //     res.locals.ingredients = await Ingredient.update({
-  //       name,
-  //     }, {
-  //       where: {
-  //         	id,
-  //       },
-  //     });
-  //     next();
-  //   } catch (e) {
-  //     next(e);
-  //   }
-  // },
+  async update(req, res, next) {
+    try {
+      const id = Number.parseInt(req.params.id, 10);
+
+      const { 
+        name,
+      } = req.body;
+
+      res.locals.ingredients = await Ingredient.findOne({
+        where: { id },
+        rejectOnEmpty: true,
+      });
+
+      const newIng = await Ingredient.update({
+        name,
+      }, {
+        where: {
+          id,
+        },
+        limit: 1,
+        return: true,
+      });
+
+      res.locals.ingredients = newIng
+
+      next();
+    } catch (e) {
+      next(e);
+    }
+  },
 
 
   async destroy(req, res) {

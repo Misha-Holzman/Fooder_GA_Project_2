@@ -6,9 +6,9 @@ const views = require('../controllers/viewController');
 const categoryRouter = express.Router();
 
 
-categoryRouter.route('/:category_id')
+categoryRouter.route('/:id')
   .get(categories.getOne, views.showOne)
-  // .put(categories.update, views.handleUpdate, views.badUpdate)
+  .put(categories.update, views.handleUpdate, views.badUpdate)
   .delete(categories.destroy, views.handleDestroy);
 
 

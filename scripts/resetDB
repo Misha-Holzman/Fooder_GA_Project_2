@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 
- // This is getting the db connection from sequalize
+// This is getting the db connection from sequalize
 const { db } = require('../models');
-
 
 
 // async call (since were awaiting ap promise)
