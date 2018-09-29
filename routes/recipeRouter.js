@@ -5,6 +5,10 @@ const views = require('../controllers/viewController');
 
 const recipeRouter = express.Router();
 
+recipeRouter.get('/:id/edit', recipes.showEditForm);
+
+recipeRouter.get('/new', recipes.showNewForm);
+
 
 recipeRouter.route('/:id')
   .get(recipes.getOne, views.showOne)
@@ -18,8 +22,19 @@ recipeRouter.route('/')
   .post(recipes.create, views.showJSON, views.badCreate);
 
 
+
+
+
+
+
+
+
 recipeRouter.use(views.showJSON, views.notFound);
 // for 'all' requests that come into my recipeRouter, this is always going to be at the end.
+
+
+
+
 
 
 module.exports = recipeRouter;

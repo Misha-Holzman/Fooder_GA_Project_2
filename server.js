@@ -41,6 +41,7 @@ app.use('/categories', categoryRouter);
 
 app.get('/', (req, res) => {
   res.send('hello world');
+  res.render('index');
 });
 
 

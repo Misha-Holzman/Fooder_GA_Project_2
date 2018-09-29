@@ -12,7 +12,7 @@ module.exports = {
    * @param {next} next - The next middleware function in our route
    * @return {undefined}
    */
-   
+
   async index(req, res, next) {
     let filter = {};
     try {
@@ -40,6 +40,7 @@ module.exports = {
       const id = Number.parseInt(req.params.id, 10);
       res.locals.recipes = await Recipe.findOne({
         where: { id },
+        include: [Ingredient, Category],
         rejectOnEmpty: true,
       });
       next();
@@ -47,6 +48,17 @@ module.exports = {
       next(e);
     }
   },
+
+
+  // showEditForm
+
+
+
+  // showNewForm
+
+
+
+
 
 
   async create(req, res, next) {
@@ -148,4 +160,36 @@ module.exports = {
   },
 
 
+  async showNewForm(req, res) {
+    // TODO: make this method
+    res.send('im a NEW Recipe form');
+  },
+
+
+
+  async showEditForm(req, res) {
+    // TODO: make this method
+    res.send('im an EDIT Recipe form');
+  },
+
+
+
+
+
+
+
+
+
 };
+
+
+
+ 
+
+
+
+
+
+
+
+

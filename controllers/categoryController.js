@@ -54,6 +54,7 @@ module.exports = {
       next(e);
     }
   },
+  
 
   async update(req, res, next) {
     try {
