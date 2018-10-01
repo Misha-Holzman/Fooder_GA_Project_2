@@ -1,9 +1,10 @@
-const path = require('path')
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const reactViews = require('express-react-views');
 const methodOverride = require('method-override')
+const path = require('path')
+
 
 const recipeRouter = require('./routes/recipeRouter');
 const categoryRouter = require('./routes/categoryRouter');
@@ -23,14 +24,10 @@ app.set('view engine', 'jsx');
 app.engine('jsx', reactViews.createEngine());
 
 
-app.use(methodOverride('_method'))
 app.use(logger('dev'));
+app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-
-
-
 app.use(express.static(path.join('public')));
 
 
@@ -40,8 +37,7 @@ app.use('/categories', categoryRouter);
 
 
 app.get('/', (req, res) => {
-  res.send('hello world');
-  res.render('index');
+	res.render('Index');
 });
 
 

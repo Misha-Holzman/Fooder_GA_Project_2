@@ -1,0 +1,171 @@
+
+const style = {backgroundImage: 'url(/images/some-image.png)'}
+/*
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+article {{
+  boxSizing: "border-box",
+  flex: "3"
+}}
+
+main {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  width: 970px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.container1 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.content1 {
+  width: 960px;
+}
+
+.content2 {
+  width: 960px;
+}
+
+article > ul > li > p {
+  font-size: 30px;
+  font-weight: 1.4 thick;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+.container2 > ul > li > p {
+  font-size: 18px;
+  font-weight: 1.4 thick;
+  text-align: center;
+}
+
+.container2 > ul > li > img {
+  height: 192px;
+  width: 193px;
+  padding-bottom: 5px;
+
+}
+
+
+.container2 > ul {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1000px;
+  justify-content: flex-start;
+  margin-left: -40px;
+}
+
+.container1 > ul > li {
+    padding-right: 1%;
+}
+
+footer {
+  background-image: url(images/footer.jpg);
+  background-size: contain;
+  min-height: 395px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.blogPostsTitle {
+  font-size: 16px;
+  font-weight: 1.4;
+  padding-top: 12px;
+  padding-bottom: 0px;
+}
+
+header, footer {
+  flex: 0 150px;
+}
+
+.container li ul {
+  display: block;
+}
+
+ul {
+   list-style-type: none;
+}
+
+.addressPhone {
+  display: flex;
+  font-size: 16px;
+  font-weight: 1.4;
+  justify-content: flex-end;
+  padding-right: 12%;
+  margin-top: 110px;
+}
+
+.peopleTitle {
+  font-size: 16px;
+  font-weight: 1.4;
+}
+
+
+a {
+  text-decoration: none;
+}
+*/
+
+/* mouse over link */
+/*a:hover {
+    color: hotpink;
+}*/
+
+
+
+
+
+/*@media screen and (max-width: 960px) {
+  main {
+    flex-direction: column;
+  }
+
+  article {
+    order: 0;
+  }
+
+  aside {
+    flex: 0;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+
+  article {
+    order: 0;
+  }
+
+  aside {
+    flex: 0;
+  }
+}
+
+
+
+@media screen and (max-width: 400px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article {
+    order: 0;
+  }
+
+  aside {
+    flex: 0;
+  }
+}*/

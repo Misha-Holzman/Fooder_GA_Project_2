@@ -3,7 +3,7 @@ module.exports = {
     res.json(res.locals);
   },
   showRecipes(req, res) {
-    res.json(res.locals);
+    res.render('DefaultLayout');
   },
   showCategories(req, res) {
     res.json(res.locals);

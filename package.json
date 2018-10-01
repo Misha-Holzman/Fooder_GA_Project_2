@@ -1,15 +1,22 @@
 {
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "body-parser": "^1.18.3",
+    "bulma": "^0.7.1",
+    "bulma-start": "^0.0.2",
     "express": "^4.16.3",
     "express-react-views": "^0.10.5",
+    "file-loader": "^2.0.0",
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
     "pg": "^7.4.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "sequelize": "^4.39.0",
-    "sequelize-cli": "^4.1.1"
+    "sequelize-cli": "^4.1.1",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.20.2"
   },
   "scripts": {
     "dev": "nodemon",
