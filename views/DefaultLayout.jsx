@@ -25,66 +25,101 @@ export default ({ title, children }) => (
 				      <br />
 							<div class="columns is-centered">
 					      <div class="column is-2">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Monday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 					      <div class="column is-2">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Tuesday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 					      <div class="column is-2">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Wednesday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 					      <div class="column is-2">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Thursday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 					      <div class="column is-2">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Friday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
@@ -92,27 +127,41 @@ export default ({ title, children }) => (
 							</div>
 							<div class="columns is-centered">
 					      <div class="column is-3">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+					        <div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>
 					         	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					         	Saturday
 					         	</h2>
 					         	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 					      <div class="column is-3">
-					        <div class="red has-text-centered" style={{ border: 'solid orange 1px', backgroundColor: 'orange', height: '150px' }}>
+									<div class="red has-text-centered" style={{ 
+					        		border: 'solid orange 1px', 
+					        		backgroundColor: 'orange', 
+					        		height: '150px', 
+					        		borderRadius: '7px', 
+					        		paddingLeft: '3px', 
+					        		paddingRight: '3px' 
+					        }}>					        	
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Sunday
 					        	</h2>
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="Log your recipe here" />
+  										  <input class="input" type="text" placeholder="To cook:" />
   										</div>
 										</div>
 					        </div>

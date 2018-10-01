@@ -39,6 +39,24 @@ app.use('/categories', categoryRouter);
 app.get('/', (req, res) => {
 	res.render('Index');
 });
+// change this^ to display all the recipes in a diferent page
+
+app.get('/home', (req, res) => {
+	res.render('Index');
+});
+
+app.get('/cooking-tips', (req, res) => {
+	res.render('CookingTips');
+});
+
+app.get('/new-recipe', (req, res) => {
+	res.render('NewRecipeForm');
+});
+
+// app.get('/all-recipes', (req, res) => {
+// 	res.send(recipes);
+// });
+
 
 
 app.listen(PORT, () => console.log(`Server up and Foooooder listening on port ${PORT} in ${app.get('env')} mode`));

@@ -3,18 +3,24 @@ module.exports = {
     res.json(res.locals);
   },
   showRecipes(req, res) {
+    res.json(res.locals);
+  },
+  showHome(req, res) {
     res.render('DefaultLayout');
+  },
+  showAllRecipes(req, res) {
+    res.send('recipes');
   },
   showCategories(req, res) {
     res.json(res.locals);
   },
   handleRecipeCreate(req, res) {
   	res.json(res.locals);
-    // res.redirect(`/recipes/${res.locals.recipe.id}`);
+    res.redirect(`/recipes/${res.locals.recipe.id}`);
   },
   handleCategoryCreate(req, res) {
-    res.json(res.locals);
-    // res.redirect(`/categories/${res.locals.category.id}`);
+    // res.json(res.locals);
+    res.redirect(`/categories/${res.locals.category.id}`);
   },
   handleIngredientsCreate(req, res) {
     res.json(res.locals);
@@ -42,7 +48,12 @@ module.exports = {
   handleDestroy(req, res) {
   	res.json(res.locals);
   },
-  
+  showCookingTips(req, res) {
+    res.render('CookingTips');
+  },
+  makeNewRecipeForm(req, res) {
+    res.render('NewRecipeForm')
+  }
 };
 
 

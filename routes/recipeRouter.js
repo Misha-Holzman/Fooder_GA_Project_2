@@ -22,11 +22,7 @@ recipeRouter.route('/')
   .post(recipes.create, views.showJSON, views.badCreate);
 
 
-
-
-
-
-
+recipeRouter.get('/home', views.showHome);
 
 
 recipeRouter.use(views.showJSON, views.notFound);

@@ -1,12 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import CookingTips from './CookingTips';
+import NewRecipeForm from './NewRecipeForm'
 
 
 const Nav = ({ recipe }) => (
 <header class="has-navbar-fixed-top">
 	<nav class="navbar is-fixed-top">
 	  <div class="navbar-brand">
-	    <a href="/">
+	    <a href="/home">
 	    	<img src="https://i.imgur.com/k1ZaemO.png" width='200' />
 	    </a>
 	    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -18,24 +19,24 @@ const Nav = ({ recipe }) => (
 	  
 	  <div class="navbar-menu">
 	    <div class="navbar-start">
-	      <a class="navbar-item" href="/">
+	      <a class="navbar-item" href="/home">
 	        Home
 	      </a>
 	      <div class="navbar-item has-dropdown is-hoverable">
-	        <a class="navbar-link" href="/documentation/overview/start/">
+	        <a class="navbar-link" href="/all-recipes">
 	          Recipes
 	        </a>
 	        <div class="navbar-dropdown is-boxed">
-	          <a class="navbar-item" href="/documentation/overview/start/">
+	          <a class="navbar-item" href="/all-recipes">
 	            Categories
 	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+	          <a class="navbar-item" href="/new-recipe">
 	            Create Your Own Recipe
 	          </a>
 	          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
 	            Update A Recipe
 	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+	          <a class="navbar-item" href="/cooking-tips">
 	            Cooking Tips!
 	          </a>
 	          <hr class="navbar-divider" />

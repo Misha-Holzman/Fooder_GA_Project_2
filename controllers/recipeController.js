@@ -50,15 +50,6 @@ module.exports = {
   },
 
 
-  // showEditForm
-
-
-
-  // showNewForm
-
-
-
-
 
 
   async create(req, res, next) {
