@@ -4,11 +4,13 @@ import NewRecipeForm from './NewRecipeForm'
 
 
 const Nav = ({ recipe }) => (
+
+
 <header class="has-navbar-fixed-top">
 	<nav class="navbar is-fixed-top">
 	  <div class="navbar-brand">
 	    <a href="/home">
-	    	<img src="https://i.imgur.com/k1ZaemO.png" width='200' />
+	    	<img src="https://i.imgur.com/k1ZaemO.png" width='200' style={{marginLeft: '20px'}}/>
 	    </a>
 	    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
 	      <span></span>
@@ -19,7 +21,7 @@ const Nav = ({ recipe }) => (
 	  
 	  <div class="navbar-menu">
 	    <div class="navbar-start">
-	      <a class="navbar-item" href="/home">
+	      <a class="navbar-item" href="/home" style={{paddingLeft: '30px'}}>
 	        Home
 	      </a>
 	      <div class="navbar-item has-dropdown is-hoverable">

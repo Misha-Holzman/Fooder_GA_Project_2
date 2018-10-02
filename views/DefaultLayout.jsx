@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
-import FindRecipesForm from './DisplayRecipe'
+import FindRecipesByCatForm from './DisplayRecipe'
 
 
 export default ({ title, children }) => (
@@ -11,27 +11,31 @@ export default ({ title, children }) => (
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
       <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" />
+      <link rel="stylesheet" href="/css/style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Permanent+Marker" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet" />
     </head>
-    <body>
+    <body className="bgImage">
     	<Nav />
     		<body>
 				  <section class="section is-medium has-text-centered"  style={{borderBottom: 'solid orange 1px'}}>
 
 				    <div class="container">
 				      <h1 class="title" style={{}}>Your week</h1>
-				      <h2 class="subtitle">
+				      <h2 class="subtitle" className="coolH2">
 				        for delicious meals
 				      </h2>
 				      <br />
 							<div class="columns is-centered">
-					      <div class="column is-2">
+					      <div class="column is-2" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Monday
@@ -44,14 +48,14 @@ export default ({ title, children }) => (
 										</div>
 					        </div>
 					      </div>
-					      <div class="column is-2">
+					      <div class="column is-2" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Tuesday
@@ -59,19 +63,19 @@ export default ({ title, children }) => (
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
 					      </div>
-					      <div class="column is-2">
+					      <div class="column is-2" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Wednesday
@@ -79,19 +83,19 @@ export default ({ title, children }) => (
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
-					      </div>
-					      <div class="column is-2">
+					      </div> 
+					      <div class="column is-2" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Thursday
@@ -99,19 +103,19 @@ export default ({ title, children }) => (
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
 					      </div>
-					      <div class="column is-2">
+					      <div class="column is-2" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Friday
@@ -119,21 +123,21 @@ export default ({ title, children }) => (
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
 					      </div>
 							</div>
 							<div class="columns is-centered">
-					      <div class="column is-3">
+					      <div class="column is-3" className="calander">
 					        <div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>
 					         	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					         	Saturday
@@ -141,19 +145,19 @@ export default ({ title, children }) => (
 					         	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
 					      </div>
-					      <div class="column is-3">
+					      <div class="column is-3" className="calander">
 									<div class="red has-text-centered" style={{ 
 					        		border: 'solid orange 1px', 
 					        		backgroundColor: 'orange', 
 					        		height: '150px', 
-					        		borderRadius: '7px', 
-					        		paddingLeft: '3px', 
-					        		paddingRight: '3px' 
+					        		borderRadius: '15px', 
+					        		paddingLeft: '10px', 
+					        		paddingRight: '10px' 
 					        }}>					        	
 					        	<h2 style={{ fontWeight: 'bold', paddingBottom: '10px' }}>
 					        	Sunday
@@ -161,7 +165,7 @@ export default ({ title, children }) => (
 					        	<div class="field">
   										<label class="label">Recipe:</label>
   										<div class="control">
-  										  <input class="input" type="text" placeholder="To cook:" />
+  										  <input class="input" type="text" placeholder="" />
   										</div>
 										</div>
 					        </div>
@@ -170,12 +174,12 @@ export default ({ title, children }) => (
 						</div>
 				  </section>
 				  <section class="section is-medium has-text-centered">
-				    <div class="container">
+				    <div class="container" style={{ borderRadius: '200px', backgroundColor: 'white', width: '30%', padding: '50px 50px' }}>
 				    	<h1 class="title">Search</h1>
-				    	<h2 class="subtitle">
+				    	<h2 class="subtitle" className="coolH2">
 				    	for your favorite recipes
 				    	</h2>
-				    	<FindRecipesForm />
+				    	<FindRecipesByCatForm />
 				    </div>
 				  </section>
 				</body>				

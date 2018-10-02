@@ -5,38 +5,59 @@ const views = require('../controllers/viewController');
 
 const recipeRouter = express.Router();
 
-recipeRouter.get('/:id/edit', recipes.showEditForm);
 
-recipeRouter.get('/new', recipes.showNewForm);
+
+
+
+recipeRouter.get('/:id/edit', recipes.showEditForm);
 
 
 recipeRouter.route('/:id')
-  .get(recipes.getOne, views.showOne)
-  .put(recipes.update, views.handleUpdate, views.badUpdate)
-  .delete(recipes.destroy, views.handleDestroy);
+  .get(recipes.getOne, views.showOneRecipe)
+  // .put(recipes.update, views.handleUpdate, views.badUpdate)
+  // .delete(recipes.destroy, views.handleDestroy);
 
 
-// everything in this file will be mounted at /recipes
-recipeRouter.route('/')
-  .get(recipes.index, views.showRecipes)
-  .post(recipes.create, views.showJSON, views.badCreate);
+// recipeRouter.route('/newRecipe')
+//   .get(recipes.index, views.showAllRecipes)
+//   .post(recipes.create)
 
 
 recipeRouter.get('/home', views.showHome);
 
 
-recipeRouter.use(views.showJSON, views.notFound);
+// recipeRouter.post('/showNewRecipe', views.handleRecipeCreate);
+
+
+recipeRouter.route('/recipesByCategory') 
+	.get(recipes.index, views.showRecipesByCategory)
+
+
+
+recipeRouter.route('/')
+  .get(recipes.index, views.showRecipes)
+  // .post(recipes.create, views.showJSON, views.badCreate);
+
+
+
+// recipeRouter.get('/new', recipes.showNewForm);
+
+
+
+// recipeRouter.use(views.showJSON, views.notFound);
 // for 'all' requests that come into my recipeRouter, this is always going to be at the end.
 
 
-// notes from DefaultLayout:
-//< title>{title}</title >
-// {children}
 
-// youtube -> react conponents and props or just react props
-// https://reactjs.org/docs/introducing-jsx.html
-//  -> functional and props (something like that)   -> read 2 and 4 not 5
-// do a codepen –>
+
+
 
 
 module.exports = recipeRouter;
+
+
+
+
+
+
+

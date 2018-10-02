@@ -3,6 +3,7 @@ const { Category, Recipe, Ingredient } = require('../models');
 
 
 module.exports = {
+
   /**
    * @async
    * @method index
@@ -28,6 +29,7 @@ module.exports = {
       next(e);
     }
   },
+
 
 
   // So here I am either going to have data or im not. It will throw an error if data is not found.
@@ -64,8 +66,9 @@ module.exports = {
         description,
         directions,
         vegitarian,
-        meat,
+        meat
       } = req.body;
+
 
       res.locals.recipes = await Recipe.create({
         name,
@@ -76,7 +79,7 @@ module.exports = {
         description,
         directions,
         vegitarian,
-        meat,
+        meat
       });
 
       next();
@@ -162,8 +165,6 @@ module.exports = {
     // TODO: make this method
     res.send('im an EDIT Recipe form');
   },
-
-
 
 
 

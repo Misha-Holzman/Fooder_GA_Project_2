@@ -1,68 +1,62 @@
 import React from 'react';
 
+const { Recipe, Category, Ingredient, db } = require('../models');
+const { recipes, categories } = require('../data');
 
-const FindRecipesForm = props => (
+
+
+const FindRecipesByCatForm = recipes => (
 <div style={{ marginLeft: '20%', marginRight: '20%' }}>
-  <form action="/quotes" method="GET">
-    <div className="field">
-      <label className="label">Recipe Name</label>
-      <div className="control">
-        <input className="input" type="text" placeholder="e.g stir-fry" name="name" />
-      </div>
-    </div>
-
-    <div class="field">
+  <form  method="GET" action="/recipesByCategory">
+   
+  	<div class="field">
 			<label class="label">Category</label>
 			<div class="control has-text-centered" style={{ paddingBottom: '10px'}}>
 			  <div class="select">
-			    <select>
-			      <option>Select Category</option>
-			      <option>Seafood</option>
-			      <option>Shrimp</option>
-			      <option>Grill</option>
-			      <option>Italian</option>
-			      <option>Chicken</option>
-			      <option>American</option>
-			      <option>Asian</option>
-			      <option>Chinese</option>
-			      <option>Fish</option>
-			      <option>Pasta</option>
-			      <option>Mexican</option>
-			    </select>
-			  </div>
-			</div>
-		</div>
+			    <div className="field">
+        <div className="select">
+        	<select name= "category_id">
+{/*
+          {
+            recipes.name.map(recipe => (
+              <option value={recipe.id} key={category.id}>{category.cuisine_type}</option>
+          ))}
+*/}
+        	</select>
 
-    <div className="field">
-      <label className="label">Servings</label>
-      <div className="control">
-        <input className="input" type="text" placeholder="e.g 5" name="name" />
-      </div>
-    </div>
-
-    <div className="field">
-      <label className="label">Max Calories</label>
-      <div className="control">
-        <input className="input" type="text" placeholder="e.g 300" name="name" />
-      </div>
-    </div>
-
-    <div className="field">
-      <label className="label">Vegetarian</label>
-      <div className="control">
-        <input className="input" type="text" placeholder="e.g yes" name="name" />
-      </div>
-    </div>
+      	</div>
+   		</div>
+   		</div>
+   		</div>
     <hr />
     <div className="control has-text-centered">
       <input className="button is-info pull-right is-medium" type="submit"  style={{ backgroundColor: 'orange', color: 'black'}}/>
+    </div>
     </div>
   </form>
 </div>
 );
 
 
-export default FindRecipesForm;
+export default FindRecipesByCatForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

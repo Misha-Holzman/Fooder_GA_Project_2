@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 // grab everything from the models, including the DB connection
-const {
-  Recipe, Category, Ingredient, db,
-} = require('../models');
+const { Recipe, Category, Ingredient, db } = require('../models');
 const { recipes } = require('../data');
 
 

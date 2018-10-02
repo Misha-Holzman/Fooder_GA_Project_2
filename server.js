@@ -37,7 +37,7 @@ app.use('/categories', categoryRouter);
 
 
 app.get('/', (req, res) => {
-	res.render('Index');
+	res.render('DefaultLayout');
 });
 // change this^ to display all the recipes in a diferent page
 
@@ -53,9 +53,13 @@ app.get('/new-recipe', (req, res) => {
 	res.render('NewRecipeForm');
 });
 
-// app.get('/all-recipes', (req, res) => {
-// 	res.send(recipes);
-// });
+app.get('/all-recipes', (req, res) => {
+	res.render('ViewAllRecipesForm');
+});
+
+app.get('/recipes/categories', (req, res) => {
+	res.render(RecipesByCat);
+});
 
 
 
