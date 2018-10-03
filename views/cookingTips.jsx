@@ -18,6 +18,9 @@ export default ({ recipe }) => (
 					<div class="container is-fluid" style={{ margin: '7%'}}>
 						<div class="notification" style={{ padding: '5%' }}>
 							<div style={{ paddingBottom: '10px'}}>
+								<h1 style={{ fontSize: '30px' }}>Cooking Tips!</h1>
+								<br/>
+								
 								<h3  style={{ paddingBottom: '20px'}}>
 								We've compiled a list of <em>101 Simple Cooking Tips Everyone Should Know</em>! 
 								to make every time in the kitchen a successful one.

@@ -15,6 +15,7 @@ module.exports = {
       res.locals.categories = await Category.findAll({
         rejectOnEmpty: true,
       });
+      console.log('!!!!!!!!!!',res.locals.categories)
       next();
     } catch (e) {
       next(e);
@@ -54,13 +55,13 @@ module.exports = {
       next(e);
     }
   },
-  
+
 
   async update(req, res, next) {
     try {
       const id = Number.parseInt(req.params.id, 10);
 
-      const { 
+      const {
         cuisine_type,
       } = req.body;
 
@@ -79,7 +80,7 @@ module.exports = {
         return: true,
       });
 
-      res.locals.categories = newCat
+      res.locals.categories = newCat;
 
       next();
     } catch (e) {

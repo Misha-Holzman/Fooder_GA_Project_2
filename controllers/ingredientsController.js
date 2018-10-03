@@ -60,7 +60,7 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
 
-      const { 
+      const {
         name,
       } = req.body;
 
@@ -79,7 +79,7 @@ module.exports = {
         return: true,
       });
 
-      res.locals.ingredients = newIng
+      res.locals.ingredients = newIng;
 
       next();
     } catch (e) {

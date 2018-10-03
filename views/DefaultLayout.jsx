@@ -1,9 +1,9 @@
 import React from 'react';
 import Nav from './Nav';
-import FindRecipesByCatForm from './DisplayRecipe'
+import FindRecipesByCatForm from './DisplayRecipeForm'
 
 
-export default ({ title, children }) => (
+export default ( props ) => (
  	<html>	
  		<head>
 			<meta charSet="utf-8" />
@@ -20,7 +20,7 @@ export default ({ title, children }) => (
     	<Nav />
     		<body>
 				  <section class="section is-medium has-text-centered"  style={{borderBottom: 'solid orange 1px'}}>
-
+				  	<h2>{ Object.keys(props._locals) }</h2>
 				    <div class="container">
 				      <h1 class="title" style={{}}>Your week</h1>
 				      <h2 class="subtitle" className="coolH2">
@@ -172,6 +172,8 @@ export default ({ title, children }) => (
 					      </div>
 							</div>
 						</div>
+
+						<img src="https://i.imgur.com/K6dzi6K.png" width='100px' style={{ paddingTop: '70px' }}/>
 				  </section>
 				  <section class="section is-medium has-text-centered">
 				    <div class="container" style={{ borderRadius: '200px', backgroundColor: 'white', width: '30%', padding: '50px 50px' }}>
@@ -179,21 +181,19 @@ export default ({ title, children }) => (
 				    	<h2 class="subtitle" className="coolH2">
 				    	for your favorite recipes
 				    	</h2>
+
 				    	<FindRecipesByCatForm />
+				    
+
 				    </div>
 				  </section>
 				</body>				
-      <section className="section">
-        <div className="container">
-
-        </div>
-      </section>
     </body>
   </html>
 
 );
 
-
+console.log('hello')
 
 
 

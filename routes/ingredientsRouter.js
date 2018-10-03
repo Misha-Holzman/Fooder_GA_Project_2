@@ -12,7 +12,6 @@ const ingredientsRouter = express.Router();
 //   .delete(ingredients.destroy, views.handleDestroy);
 
 
-// // everything in this file will be mounted at /ingredients
 // ingredientsRouter.route('/')
 //   .get(ingredients.index, views.showIngredients)
 //   .post(ingredients.create, views.showJSON, views.badCreate);

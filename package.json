@@ -22,6 +22,8 @@
   },
   "scripts": {
     "dev": "nodemon",
+    "dev2": "nodemon server.js",
+    "both": "concurrently \"yarn dev\" \"npm run dev2\"",
     "lint": "eslint . --fix",
     "db:init": "dropdb --if-exists fooder_dev && createdb fooder_dev",
     "db:reset": "./scripts/resetDB",

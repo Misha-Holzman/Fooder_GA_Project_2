@@ -12,10 +12,9 @@ const categoryRouter = express.Router();
 //   .delete(categories.destroy, views.handleDestroy);
 
 
-// // everything in this file will be mounted at /categories
-// categoryRouter.route('/')
-//   .get(categories.index, views.showCategories)
-//   .post(categories.create, views.showJSON, views.badCreate);
+categoryRouter.route('/')
+  .get(categories.index, views.showJSON)
+  // .post(categories.create, views.showJSON, views.badCreate);
 
 
 // categoryRouter.use(views.showJSON, views.notFound);
@@ -23,3 +22,8 @@ const categoryRouter = express.Router();
 
 
 module.exports = categoryRouter;
+
+
+
+// seeded weird ––> so I am having trouble rendering my data
+// is it possible to refactor it so that it is set up in a way that will be easier to 

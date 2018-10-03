@@ -31,7 +31,6 @@ module.exports = {
   },
 
 
-
   // So here I am either going to have data or im not. It will throw an error if data is not found.
   // its calling the recipes we put in res.locals and is using a promise (await) to call recipe.findAll
 
@@ -52,8 +51,6 @@ module.exports = {
   },
 
 
-
-
   async create(req, res, next) {
     try {
       // receiving from the body
@@ -66,7 +63,7 @@ module.exports = {
         description,
         directions,
         vegitarian,
-        meat
+        meat,
       } = req.body;
 
 
@@ -79,7 +76,7 @@ module.exports = {
         description,
         directions,
         vegitarian,
-        meat
+        meat,
       });
 
       next();
@@ -93,7 +90,7 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
 
-      const { 
+      const {
         name,
         img_url,
         yeild,
@@ -128,7 +125,7 @@ module.exports = {
         return: true,
       });
 
-      res.locals.recipes = newRecipe
+      res.locals.recipes = newRecipe;
 
       next();
     } catch (e) {
@@ -160,28 +157,10 @@ module.exports = {
   },
 
 
-
   async showEditForm(req, res) {
     // TODO: make this method
     res.send('im an EDIT Recipe form');
   },
 
 
-
-
-
-
-
 };
-
-
-
- 
-
-
-
-
-
-
-
-

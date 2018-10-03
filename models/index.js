@@ -74,7 +74,6 @@ Recipe.belongsToMany(Category, { through: 'recipe_category' });
 Category.belongsToMany(Recipe, { through: 'recipe_category' });
 
 
-
 module.exports = {
   Recipe,
   Ingredient,

@@ -2,12 +2,16 @@ module.exports = {
   // showIngredients(req, res) {
   //   res.json(res.locals);
   // },
+  showMain(req, res) {
+    res.render('DefaultLayout', { categories: 'hello' })
+  },
+
   showRecipes(req, res) {
     res.json(res.locals);
     // res.redirect(`/recipes/${res.locals.recipes.id}`);
   },
   showHome(req, res) {
-    res.render('DefaultLayout');
+    res.render('DefaultLayout', { categories: res.locals.categories });
   },
   showAllRecipes(req, res) {
     res.render('NewRecipeForm');
@@ -15,13 +19,13 @@ module.exports = {
   // showCategories(req, res) {
   //   res.json(res.locals);
   // },
-  handleRecipeCreate(req, res) {
-  	res.json(res.locals);
-    res.redirect(`/showNewRecipe/${res.locals.recipe.id}`);
-  },
+  // handleRecipeCreate(req, res) {
+  // 	res.json(res.locals);
+  //   res.redirect(`/showNewRecipe/${res.locals.recipe.id}`);
+  // },
   showRecipesByCategory(req, res) {
     res.json(res.locals);
-    res.redirect(`/recipesByCategory/${res.locals.recipe.id}`);
+    res.redirect(`/recipesByCatResults/${res.locals.recipe.id}`);
   },
   // handleCategoryCreate(req, res) {
   //   // res.json(res.locals);
@@ -31,7 +35,7 @@ module.exports = {
   //   res.json(res.locals);
   //   // res.redirect(`/ingredients/${res.locals.ingredient.id}`);
   // },
-  notFound(err, req, res, next) {
+  notFound(err, req, res) {
   	res.sendStatus(404);
   },
   showJSON(req, res) {
@@ -66,8 +70,8 @@ module.exports = {
     res.render('CookingTips');
   },
   makeNewRecipeForm(req, res) {
-    res.render('NewRecipeForm', res.locals)
-  }
+    res.render('NewRecipeForm', res.locals);
+  },
 };
 
 
