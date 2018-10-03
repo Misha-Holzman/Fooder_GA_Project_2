@@ -1,16 +1,27 @@
 const Sequelize = require('sequelize');
+// DATABASE_URL=postgres://localhost:5432/pantrydb
 
 
 // connect to the database and set up some behavior
-const db = new Sequelize({
-  database: 'fooder_dev',
+
+const sequelize = new Sequelize(
+  process.env.DATABASE_URL || 'postgres://localhost:3000/fooder_dev', {
   dialect: 'postgres',
   define: {
     underscored: true,
     returning: true,
     timestamps: false,
-  },
 });
+
+// const db = new Sequelize({
+//   database: 'fooder_dev',
+//   dialect: 'postgres',
+//   define: {
+//     underscored: true,
+//     returning: true,
+//     timestamps: false,
+//   },
+// });
 
 
 const Recipe = db.define('recipe', {

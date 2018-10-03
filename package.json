@@ -24,6 +24,7 @@
     "dev": "nodemon",
     "dev2": "nodemon server.js",
     "both": "concurrently \"yarn dev\" \"npm run dev2\"",
+    "start": "node server.js",
     "lint": "eslint . --fix",
     "db:init": "dropdb --if-exists fooder_dev && createdb fooder_dev",
     "db:reset": "./scripts/resetDB",
@@ -40,5 +41,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.4"
+  }, "engines": {
+      "node": "10.11.0",
+      "yarn": "1.10.1"
   }
 }
